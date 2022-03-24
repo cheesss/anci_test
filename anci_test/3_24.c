@@ -19,6 +19,7 @@ int count(LINK);
 void print(LINK);
 LINK lookup(LINK, DATA);
 LINK insert(LINK);
+LINK deletenode(LINK);
 
 
 main() {
@@ -42,6 +43,10 @@ main() {
 	//char c = getchar();
 	//printf("찾는 글자의 주소는 %p 입니다 \n", lookup(head, c));
 	insert(head);
+	print(head);
+
+	printf("\n\n");
+	deletenode(head);
 	print(head);
 
 }
@@ -75,7 +80,7 @@ int count(LINK head) {		//노드 개수 세기 함수
 void print(LINK head){		//노드 d에 저장된 값 출력
 	if (head != NULL) {
 		printf("%c", head->d);
-		printf(head->next);
+		print(head->next);
 	}
 	//헤드가 저장한 값이 NULL이면 아무것도 안하면 된다.
 }
@@ -97,7 +102,7 @@ LINK insert(LINK head) {
 	LINK n1;
 	char key, x;			//내가 원하는 데이터값 key, 끼워넣을 값 x
 
-	printf("끼워넣을 값 입력하시오 :");
+	printf("끼워넣을 값 입력하시오 : \n");
 	scanf("%c", &x);
 	printf("어떤 값 다음에 x를 넣을까? :");
 	scanf("%c", &key);
@@ -113,4 +118,36 @@ LINK insert(LINK head) {
 		n1->next = newnode;				//이제 추가된 노드를 기존 n1이 가리키던 곳을 가리키도록 설정
 	}
 	return head;
+}
+
+LINK find(LINK head, char key) {
+	if (head->next->d == key) {
+		return head;
+	}
+	else if (head->next->next==NULL) {
+		return NULL;
+	}
+	else {
+		return(find(head->next, key));
+	}
+}
+
+//여기를 수정하는게 과제
+
+LINK deletenode(LINK head) {
+	char key;
+	LINK n1, p;
+	printf("지우고싶은 문자 하나를 입력하시오:");
+	scanf("%c", &key);
+	getchar();
+	n1 = find(head, key);
+	if (n1 == NULL) {
+		printf("찾으려는 값이 없다.");
+	}
+	else {
+		p = n1->next;
+		n1->next = p->next;
+		free(p);
+	}
+	return (head);
 }
