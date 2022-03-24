@@ -39,6 +39,8 @@ main() {
 	head2 = lookup(head, ch);
 	head2->d = ' ';
 	print(head2);
+	printf("\n");
+
 	//printf("찾으려는 글자를 입력하시오 : ");
 	//char c = getchar();
 	//printf("찾는 글자의 주소는 %p 입니다 \n", lookup(head, c));
@@ -102,8 +104,10 @@ LINK insert(LINK head) {
 	LINK n1;
 	char key, x;			//내가 원하는 데이터값 key, 끼워넣을 값 x
 
-	printf("끼워넣을 값 입력하시오 : \n");
+	printf("끼워넣을 값 입력하시오 :");
 	scanf("%c", &x);
+	getchar();
+
 	printf("어떤 값 다음에 x를 넣을까? :");
 	scanf("%c", &key);
 	getchar();			//dummy getchar 버퍼때문에 필요
@@ -131,7 +135,6 @@ LINK find(LINK head, char key) {
 		return(find(head->next, key));
 	}
 }
-
 //여기를 수정하는게 과제
 
 LINK deletenode(LINK head) {
