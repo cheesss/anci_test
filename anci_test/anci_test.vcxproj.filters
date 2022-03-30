@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="14_9hw.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ch14hw.c">
+    <ClCompile Include="quiz_practice.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
