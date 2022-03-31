@@ -1,10 +1,7 @@
 #include<stdio.h>
-#define PI 3.14
+#include "comp.h"
 
 //#define MAX(a, b) a>b?a:b
-float ADD(float, float);
-float SUB(float, float);
-float DEG2RAD(float);
 
 main() {
 	/*int num1, num2, num3;
@@ -21,13 +18,4 @@ main() {
 	rad1 = DEG2RAD(deg3);
 
 	printf("°á°ú:%f deg =  %f\n", deg3, rad1);
-}
-float ADD(float a, float b) {
-	return(a + b);
-}
-float SUB(float a, float b) {
-	return(a - b);
-}
-float DEG2RAD(float deg) {
-	return(deg * PI / 180.0);
 }
