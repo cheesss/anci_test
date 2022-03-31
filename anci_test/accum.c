@@ -1,6 +1,9 @@
 #include <stdio.h>
 #pragma warning(disable: 4996)
-
+#define DEBUG 1
+#if DEBUG > 2
+#error Undefined DEUG type
+#endif
 int accum(int, int);
 
 main() {
@@ -20,11 +23,13 @@ int accum(int num, int times) {
 	int prev = 0;
 	for (i = 0; i < times; i++) {
 		result += num;
-#ifdef DEBUG			//디버그가 정의되면 계산과정이 출력된다.
+#if DEBUG==1			//디버그가 정의되면 계산과정이 출력된다.
 		printf("%d번 반복된 결과 : %d + %d =%6d\n", i, prev, num, result);
-#endif
+#elif DEBUG==2
+		printf()
 		prev = result;
 		num++;
 	}
+#endif
 	return result;
 }
