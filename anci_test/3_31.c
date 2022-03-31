@@ -18,4 +18,12 @@ main() {
 	rad1 = DEG2RAD(deg3);
 
 	printf("°á°ú:%f deg =  %f\n", deg3, rad1);
+
+	printf("PI: %f\n", PI);
+
+#ifdef PI
+#undef PI
+#define PI 3.141592
+#endif
+	printf("PI = %f\n", PI);
 }
