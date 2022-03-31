@@ -16,7 +16,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="quiz_practice.c">
-    <ClCompile Include="accum.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
