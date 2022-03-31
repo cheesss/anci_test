@@ -139,8 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="3_31.c" />
-    <ClCompile Include="comp.c" />
+    <ClCompile Include="accum.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="comp.h" />
