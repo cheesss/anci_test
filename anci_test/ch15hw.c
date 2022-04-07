@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define sphere(r) (4/3*r*r*r*3.14);
-#define until(x) while(!x);
+
 main() {
 	float a = 5, b = 10, c = 15;
 	float sphereA = sphere(a);
