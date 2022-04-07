@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cplus_plus4_7.cpp">
+    <ClCompile Include="4_2_second.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
