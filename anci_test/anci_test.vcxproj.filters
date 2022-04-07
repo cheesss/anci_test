@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="4_2_second.cpp">
+    <ClCompile Include="ch15hw.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
