@@ -10,7 +10,6 @@ int main() {
 
 	void* gp;		//generic pointer
 	gp = iptr;		//gp에 a의 주소를 저장
-
 	cout << "a: " << a << endl;
 	cout << "*iptr:" << *iptr << endl;
 	cout << "*(int*) gp: " << *(int*)gp << endl;	//void형 포인터 변수도 출력할때는 형변환을 통해 형을 정해야한다
