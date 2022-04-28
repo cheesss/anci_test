@@ -1,5 +1,3 @@
-//기본적인 연결리스트를 생성하시오
-
 #include<stdio.h>
 #include<stdlib.h>
 #pragma warning(disable:4996)
@@ -20,6 +18,8 @@ main() {
 	head = (link)malloc(sizeof(node));
 	input(head);
 	print(head);
+
+	free(head);
 }
 
 void input(link head) {
@@ -37,13 +37,15 @@ void input(link head) {
 	}
 	return;
 }
-
+int i = 1;
 void print(link head) {
 	if (head->next != NULL) {
-		printf("%d --> ", head->d);
+
+		printf("%d번째 : %d \n", i, head->d);
 		if (head->next->next == NULL) {
 			printf("%d",head->next -> d);
 		}
+		i++;
 		print(head->next);
 	}
 	return;
