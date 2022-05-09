@@ -8,6 +8,7 @@ public:
 	void setmatrix(int, int, float);
 	float getmatrix(int, int);
 	void printmatrix();
+	void transpose();
 
 };
 
@@ -29,6 +30,20 @@ void mat3::printmatrix() {
 	}
 }
 
+void mat3::transpose() {
+	mat3 temp;
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			temp.a[i][j] = a[i][j];
+		}
+	}
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			a[i][j] = temp.a[j][i];
+		}
+	}
+}
+
 int main() {
 
 	mat3 m1;
@@ -46,6 +61,10 @@ int main() {
 	cin >> col;
 
 	cout << "a{" << row << "}{" << col << "}:" << m1.getmatrix(row, col) << endl;
+
+	m1.printmatrix();
+
+	m1.transpose();
 
 	m1.printmatrix();
 
