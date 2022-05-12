@@ -30,6 +30,8 @@ public:
 
 	friend complex operator++(complex&);
 	friend complex operator+(complex, complex);
+
+	complex operator-(complex);
 };
 
 /*complex complex::operator++() {
@@ -47,7 +49,7 @@ complex operator++(complex& input) {
 	input.real++;
 	input.imag++;
 	return input;
-}
+}	  //레퍼런스 변수여야한다 주의. 그냥 변수를 전해주면 ++효과 없어짐.
 complex::complex(float real, float imag) {
 	this->real = real;
 	this->imag = imag;
@@ -57,7 +59,12 @@ complex::complex(complex& input) {
 	real = input.real;
 	imag = input.imag;
 }
-
+complex complex::operator-(complex left) {
+	complex temp;
+	temp.real = real - left.real;
+	temp.imag = imag - left.imag;
+	return temp;
+}
 complex operator+(complex left, complex right) {
 	complex temp;
 	temp.real = left.real + right.real;
@@ -71,7 +78,7 @@ int main() {
 
 	complex c3, c4;
 	//c3 = ++c1; 밑의 코드와 같다
-	//c3 = c1.operator++();	//c1값 증가 후 c3에 대입
+	/*//c3 = c1.operator++();	//c1값 증가 후 c3에 대입
 	c3 = operator++(c1);
 	cout << "c1:";
 	c1.printvalue();
@@ -82,5 +89,11 @@ int main() {
 	cout << "c2:";
 	c2.printvalue();
 	cout << "c4:";
+	c4.printvalue();*/
+
+	c3 = c1 + c2;
+	c3 = operator+(c1, c2);
+	c3.printvalue();
+	c4 = c3 - c1;
 	c4.printvalue();
 }
