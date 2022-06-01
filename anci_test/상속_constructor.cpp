@@ -21,7 +21,7 @@ public:
 	virtual void showvalue() {
 		cout << p1 << endl;
 	}
-	
+
 };
 
 class Parent2 : public virtual Grandparent {
@@ -56,11 +56,11 @@ class Test : public Child {
 
 };
 int main() {
-//	Grandparent objG; 오류발생
-//	Parent1 P1; 이것도 오류발생, grandparent가 불완전하기 때문에.
+	//	Grandparent objG; 오류발생
+	//	Parent1 P1; 이것도 오류발생, grandparent가 불완전하기 때문에.
 
-//만약 child 클래스에서만 overriding 해주었다면 child 객체만 만들 수 있다.
-//상위 부모 class에서 override 해주었다면, 그 밑의 상속 받은 자식 class에선 override 하지 않아도 객체 생성 가능하다.
+	//만약 child 클래스에서만 overriding 해주었다면 child 객체만 만들 수 있다.
+	//상위 부모 class에서 override 해주었다면, 그 밑의 상속 받은 자식 class에선 override 하지 않아도 객체 생성 가능하다.
 	Child C1;
 	C1.Grandparent::setValue(10);	//그냥 setValue를 쓰면 child 클래스 내부 함수 호출
 	C1.printValue();	//나머지 c1과p1은 쓰레기 값이 출력된다.
